@@ -12,7 +12,7 @@ class Home extends Component {
     posts: [],
     allPosts: [],
     page: 0,
-    postsPerPage: 2,
+    postsPerPage: 10,
     searchValue: "",
   };
 
@@ -61,7 +61,7 @@ class Home extends Component {
 
           {TextInput({ searchValue, handleChange: this.handleChange })}
         </div>
-        
+
         {filteredPosts.length === 0 && <p>Resultado não encontrado</p>}
 
         {filteredPosts.length > 0 && <Posts posts={filteredPosts} />}
