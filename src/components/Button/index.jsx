@@ -1,6 +1,7 @@
 import "./style.css";
 
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 export class Button extends Component {
   render() {
@@ -12,3 +13,9 @@ export class Button extends Component {
     );
   }
 }
+
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool
+};

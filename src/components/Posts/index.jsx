@@ -1,6 +1,10 @@
+import React from "react";
 import "./style.css";
+import PropTypes from 'prop-types';
 
 import { PostCard } from "../PostCard";
+
+
 
 export const Posts = ({ posts }) => (
   <div className="posts">
@@ -15,3 +19,14 @@ export const Posts = ({ posts }) => (
     ))}
   </div>
 );
+Posts.defaltProps = {
+  posts: [],
+};
+Posts.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    cover: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+  })
+  )};
